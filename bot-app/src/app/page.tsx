@@ -1,7 +1,7 @@
 import FileUpload from "@/components/FileUpload";
 import { Button } from "@/components/ui/button";
 import { UserButton, auth } from "@clerk/nextjs";
-import { LogIn } from "lucide-react";
+import { KeyboardIcon, LogIn } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -17,7 +17,16 @@ export default async function Home() {
             <UserButton afterSignOutUrl="/" />
           </div>
           <div className="flex mt-2">
-            {isAuth && <Button>Go to Chats</Button>}
+            {isAuth && (
+              <Link href="/chat/1">
+                <Button>Go to Chats</Button>
+              </Link>
+            )}
+            <Link href="/my-chat" className="ml-2">
+              <Button>
+                Chat with me <KeyboardIcon className="w-4 h-4 ml-2" />
+              </Button>
+            </Link>
           </div>
           <p className="max-w-xl mt-2 text-lg text-slate-600">
             Join millions of others and know more about anything by just
