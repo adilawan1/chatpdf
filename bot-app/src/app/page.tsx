@@ -1,7 +1,7 @@
 import FileUpload from "@/components/FileUpload";
 import { Button } from "@/components/ui/button";
 import { UserButton, auth } from "@clerk/nextjs";
-import { KeyboardIcon, LogIn } from "lucide-react";
+import { Bot, KeyboardIcon, LogIn } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -29,8 +29,8 @@ export default async function Home() {
             </Link>
           </div>
           <p className="max-w-xl mt-2 text-lg text-slate-600">
-            Join millions of others and know more about anything by just
-            uploading a PDF through AI
+            Know more about anything by just uploading a PDF through AI or talk
+            with my personal bot
           </p>
           <div className="w-full mt-4">
             {isAuth ? (
