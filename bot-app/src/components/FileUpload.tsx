@@ -26,7 +26,8 @@ const FileUpload = (props: Props) => {
       return response.data;
     },
   });
-  const { getRootProps, getInputProps } = useDropzone({
+  const { getRootProps, getInputProps, open } = useDropzone({
+    noClick: true,
     accept: { "application/pdf": [".pdf"] },
     maxFiles: 1,
     onDrop: async (acceptedFiles) => {
@@ -67,6 +68,7 @@ const FileUpload = (props: Props) => {
           className:
             "border-dashed border-2 rounded-xl cursor-pointer bg-gray-50 py-8 flex justify-center items-center flex-col",
         })}
+        onClick={open}
       >
         <input {...getInputProps} />
 
