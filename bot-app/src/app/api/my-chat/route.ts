@@ -18,15 +18,7 @@ export async function POST(req: Request) {
   try {
     const { messages, chatId } = await req.json();
     const lastMessage = messages[messages.length - 1];
-    const context = `Ahmed Adil is a qualified and professional full stack web developer.
-    Ahmed Adil has strong problem-solving and analytical skills. Ahmed Adil is a team player with an eye
-    for detail.
-    Ahmed Adil can be contacted using ahmed.a018d@gmail.com. 
-    His linked in profile is https://www.linkedin.com/in/ahmed-adil-07b4141bb/ and his github profile is https://github.com/adilawan1 
-    Ahmed Adil has more than 2 years of experience in building web applications.
-    Ahmed Adil has built enterprise grade applications using Next Js, Kentico CMS and AWS.
-    Ahmed Adil has started his career from a data science internship at Turbo Anchor.
-    Ahmed Adil is currently working as a Software Engineer at Xavor Corporation`;
+    const context = process.env.CONTEXT;
     const prompt = {
       role: "system",
       content: `AI assistant is a brand new, powerful, human-like artificial intelligence.
